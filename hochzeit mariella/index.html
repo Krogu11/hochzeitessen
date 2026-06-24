@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Das gemeinsame Hochzeitsbuffet von Mariella und Elias." />
+    <meta name="theme-color" content="#f7f1e7" />
+    <title>Mariella & Elias – Unser Hochzeitsbuffet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero" aria-labelledby="page-title">
+        <svg class="botanical botanical-left" viewBox="0 0 120 220" aria-hidden="true">
+          <path d="M18 210C34 174 38 137 62 104C76 84 89 58 93 18" />
+          <path d="M43 145C18 137 12 118 11 101C29 105 43 118 43 145ZM63 104C44 91 42 72 47 58C64 67 72 84 63 104ZM79 73C69 54 75 38 86 27C98 43 95 59 79 73ZM35 168C57 157 73 164 83 177C64 185 47 181 35 168Z" />
+          <circle cx="28" cy="184" r="4" /><circle cx="38" cy="177" r="3" />
+        </svg>
+        <svg class="botanical botanical-right" viewBox="0 0 120 220" aria-hidden="true">
+          <path d="M18 210C34 174 38 137 62 104C76 84 89 58 93 18" />
+          <path d="M43 145C18 137 12 118 11 101C29 105 43 118 43 145ZM63 104C44 91 42 72 47 58C64 67 72 84 63 104ZM79 73C69 54 75 38 86 27C98 43 95 59 79 73ZM35 168C57 157 73 164 83 177C64 185 47 181 35 168Z" />
+          <circle cx="28" cy="184" r="4" /><circle cx="38" cy="177" r="3" />
+        </svg>
+        <div class="heart-ornament" aria-hidden="true"><span></span>♥<span></span></div>
+        <h1 id="page-title">Mariella <i>&</i> Elias</h1>
+        <p class="celebration">Wir feiern die Liebe</p>
+        <h2>Ein Fest, das wir gemeinsam füllen</h2>
+        <div class="divider" aria-hidden="true"><span></span><b>❦</b><span></span></div>
+        <p class="intro">Tragt euch ein und verratet uns, welche Köstlichkeit ihr zu unserem Hochzeitsbuffet mitbringt.</p>
+      </header>
+
+      <main class="buffet-panel">
+        <section class="form-section" aria-labelledby="form-title">
+          <div class="mini-ornament" aria-hidden="true"><span></span>♥<span></span></div>
+          <h2 id="form-title" class="sr-only">Beitrag zum Buffet eintragen</h2>
+          <form id="contribution-form" novalidate>
+            <div class="field">
+              <label for="guest-name">Dein Name</label>
+              <input id="guest-name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Dein Name" required />
+            </div>
+            <div class="field">
+              <label for="guest-food">Was bringst du mit?</label>
+              <textarea id="guest-food" name="food" maxlength="180" rows="4" placeholder="Was bringst du mit?" required></textarea>
+            </div>
+            <button type="submit" id="submit-button">
+              <span>Zum Buffet hinzufügen</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            </button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+          <p class="privacy-note">Dein Eintrag ist für alle Gäste sichtbar.</p>
+        </section>
+
+        <section class="list-section" aria-labelledby="list-title">
+          <div class="list-heading">
+            <span aria-hidden="true">❧</span>
+            <h2 id="list-title">Unser gemeinsames Buffet</h2>
+            <span aria-hidden="true">❧</span>
+          </div>
+          <div class="list-meta">
+            <p>Schon dabei</p>
+            <span id="contribution-count" aria-live="polite">0 Beiträge</span>
+          </div>
+          <div id="loading-state" class="loading-state" aria-live="polite">
+            <span></span><span></span><span></span>
+            <p>Die Buffetliste wird gedeckt …</p>
+          </div>
+          <ul id="contribution-list" class="contribution-list" aria-label="Mitgebrachte Speisen"></ul>
+          <div id="empty-state" class="empty-state" hidden>
+            <svg viewBox="0 0 64 52" aria-hidden="true">
+              <path d="M11 36h42M16 36c1-14 8-22 16-22s15 8 16 22M32 14V9M29 8c0-3 6-3 6 0M6 42h52" />
+              <path d="M29 25c2-3 5-3 7 0-1 4-3 6-4 7-2-1-4-3-3-7Z" />
+            </svg>
+            <p>Noch ist der Tisch leer – macht den Anfang.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="heart-ornament" aria-hidden="true"><span></span>♥<span></span></div>
+        <p>Mit Liebe geplant & gemeinsam genossen.</p>
+        <p class="mode-note" id="mode-note" hidden></p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
